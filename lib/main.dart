@@ -10,10 +10,29 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.green[700],
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              CircleAvatar(
-                backgroundImage: NetworkImage('https://news.sagacom.com/wp-content/blogs.dir/3/files/2013/09/WP-DONKEY.jpg'),
-                radius: 50.0,
+              Container(
+                width: 100.0,
+                height: 100.0,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage('https://news.sagacom.com/wp-content/blogs.dir/3/files/2013/09/WP-DONKEY.jpg'),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 3.0,
+                  ),
+                ),
+              ),
+              // CircleAvatar(
+              //   backgroundImage: NetworkImage('https://news.sagacom.com/wp-content/blogs.dir/3/files/2013/09/WP-DONKEY.jpg'),
+              //   radius: 50.0,
+              // ),
+              SizedBox(
+                height: 10.0,
               ),
               Text(
                 'Justin Bartholomew',
@@ -34,29 +53,49 @@ class MyApp extends StatelessWidget {
                   letterSpacing: 3.0,
                 ),
               ),
-              Container(
-                padding: EdgeInsets.all(10.0),
-                color: Colors.white,
+              SizedBox(
+                height: 25.0,
+                width: 150.0,
+                child: Divider(
+                  color: Colors.green[50],
+                ),
+              ),
+              Card(
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                child: Row(
-                  children: <Widget>[
-                    Icon(
-                      Icons.phone,
-                      color: Colors.green,
-                    ),
-                    SizedBox(
-                      width: 20.0
-                    ),
-                    Text(
-                      '929-260-9906',
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.green,
+                  ),
+                  title: Text(
+                     '929-260-9906',
                       style: TextStyle(
                         color: Colors.green[700],
-                        fontFamily: 'SourceSanePro',
+                        fontFamily: 'SourceSansPro',
                         fontSize: 20.0,
-                      ),
                     ),
-                  ],
+                  ),
                 ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.green,
+                  ),
+                  title: Text(
+                    'justinbartholomew@gmail.com',
+                    style: TextStyle(
+                        color: Colors.green[700],
+                        fontFamily: 'SourceSansPro',
+                        fontSize: 20.0,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 75.0,
               ),
             ],
           ),
